@@ -1,0 +1,24 @@
+{
+  "name": "curso-api-crud",
+  "version": "1.0.0",
+  "description": "Curso de un crud con nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linuxcarl/curso-api-crud.git"
+  },
+  "keywords": [
+    "crud",
+    "nodejs",
+    "typescript"
+  ],
+  "author": "Carlos Enrique Ramírez Flores",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linuxcarl/curso-api-crud/issues"
+  },
+  "homepage": "https://github.com/linuxcarl/curso-api-crud#readme"
+}
