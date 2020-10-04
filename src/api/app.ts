@@ -1,2 +1,4 @@
-const fun = () => console.log('hio');
-console.log('hola Carlos');
+import { Server } from './server';
+const app = new Server().getApp();
+
+export { app };
