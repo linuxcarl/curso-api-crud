@@ -4,7 +4,9 @@
   "description": "Curso de un crud con nodejs",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tsc": "tsc",
+    "dev": "ts-node-dev --respawn --transpile-only ./src/api/app.ts",
+    "lint": "eslint '*/**/*.ts' --quiet --fix"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.3.0",
     "prettier": "^2.1.2",
+    "ts-node-dev": "^1.0.0-pre.63",
     "typescript": "^4.0.3"
   },
   "dependencies": {
