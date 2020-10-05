@@ -6,7 +6,8 @@
   "scripts": {
     "tsc": "tsc",
     "dev": "npm run lint && ts-node-dev --respawn --transpile-only ./src/api/app.ts",
-    "lint": "eslint '*/**/*.ts' --quiet --fix"
+    "lint": "eslint '*/**/*.ts' --quiet --fix",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@types/cors": "^2.8.7",
     "@types/express": "^4.17.8",
+    "@types/jest": "^26.0.14",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
     "awilix-express": "^3.0.0",
@@ -34,8 +36,10 @@
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.3.0",
+    "jest": "^26.5.0",
     "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
+    "ts-jest": "^26.4.1",
     "ts-node-dev": "^1.0.0-pre.63",
     "typescript": "^4.0.3"
   },
@@ -57,6 +61,15 @@
     "*.ts": [
       "eslint --cache --fix",
       "prettier --write"
+    ]
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
     ]
   }
 }
