@@ -9,7 +9,8 @@ import { Category } from '../../domain/category';
 
 export class CategoryMockRepository implements CategoryRepository {
   public async all(filter: FilterCategoryDto): Promise<Category[]> {
-    const { order, limit, page = 1, title } = filter;
+    let { page = 1, limit } = filter;
+    const { order, title } = filter;
     let result = db.categories;
 
     if (title) {
