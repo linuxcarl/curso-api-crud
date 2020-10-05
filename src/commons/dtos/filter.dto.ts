@@ -5,4 +5,6 @@ export interface FilterDto {
   limit?: number;
   offset?: number;
   deleted?: number;
+  order?: string;
+  page?: number;
 }

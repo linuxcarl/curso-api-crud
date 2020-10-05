@@ -6,10 +6,8 @@ import { CategoryService } from './category.service';
 export class CategoryController {
   public constructor(private readonly categoryService: CategoryService) {}
   @GET()
-  public index(req: Request, res: Response): void {
-    const result: any = this.categoryService.index();
-    res.send({
-      saludo: result
-    });
+  public async index(req: Request, res: Response): Promise<void> {
+    const result: any = await this.categoryService.index({ ...req.query });
+    res.send(result);
   }
 }
