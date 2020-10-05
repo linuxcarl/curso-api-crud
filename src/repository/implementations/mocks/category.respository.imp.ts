@@ -27,7 +27,6 @@ export class CategoryMockRepository implements CategoryRepository {
       limit = init ? Number(init) + Number(limit) : limit;
       result = result.length >= Number(limit) ? result.slice(init, limit) : result;
     }
-
     return Object.assign([...result]) as Category[];
   }
   public async findById(id: number): Promise<Category> {
