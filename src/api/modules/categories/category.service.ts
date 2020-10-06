@@ -6,4 +6,7 @@ export class CategoryService {
   public async index(filter?: FilterCategoryDto): Promise<any[]> {
     return await this.categoryRepository.all({ ...filter });
   }
+  public async findById(id: number): Promise<any> {
+    return await this.categoryRepository.findById(id);
+  }
 }

@@ -30,7 +30,8 @@ export class CategoryMockRepository implements CategoryRepository {
     return Object.assign([...result]) as Category[];
   }
   public async findById(id: number): Promise<Category> {
-    throw new Error('Method not implemented.');
+    const result = db.categories;
+    return (result.filter((category: any) => category.id === id) as any) as Category;
   }
   public async create(data: CreateCategoryDto[]): Promise<Category> {
     throw new Error('Method not implemented.');

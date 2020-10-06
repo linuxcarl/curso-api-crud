@@ -10,4 +10,11 @@ export class CategoryController {
     const result: any = await this.categoryService.index({ ...req.query });
     res.send(result);
   }
+  @route('/:id')
+  @GET()
+  public async findById(req: Request, res: Response): Promise<void> {
+    const { id } = req.params;
+    const result: any = await this.categoryService.findById(Number(id));
+    res.send(result);
+  }
 }
