@@ -3,7 +3,7 @@ import { CategoryService } from './category.service';
 import db from '../../../commons/store/mocks';
 const categoryService = new CategoryService(new CategoryMockRepository());
 
-describe('GET - Test Category Service', () => {
+describe('GET - Test Category Service method all()', () => {
   it('Should be to have object with categories => method all() ', async () => {
     const expected = db.categories;
     const result = await categoryService.index({});
@@ -30,5 +30,22 @@ describe('GET - Test Category Service', () => {
     const result = await categoryService.index({ order: 'desc', limit: 1 });
 
     expect(result).toStrictEqual(expected);
+  });
+});
+describe('GET - Test Category Service method findById()', () => {
+  it('Should be to have object with  one category  ', async () => {
+    const expected = [
+      {
+        id: expect.any(Number),
+        title: expect.any(String),
+        active: expect.any(Number),
+        deleted: expect.any(Number),
+        created_at: expect.any(String),
+        updated_at: expect.any(String)
+      }
+    ];
+    const result = await categoryService.findById(10);
+
+    expect(result).toMatchObject(expected);
   });
 });
