@@ -24,4 +24,11 @@ describe('GET - Test Category Service', () => {
 
     expect(result).toStrictEqual(expected);
   });
+
+  it('Should be to have object with categories + order  => method all() ', async () => {
+    const expected = [db.categories[9]];
+    const result = await categoryService.index({ order: 'desc', limit: 1 });
+
+    expect(result).toStrictEqual(expected);
+  });
 });
