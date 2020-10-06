@@ -7,6 +7,14 @@ describe('GET - Test Category Service', () => {
   it('Should be to have object with categories => method all() ', async () => {
     const expected = db.categories;
     const result = await categoryService.index({});
+
+    expect(result).toStrictEqual(expected);
+  });
+
+  it('Should be to have object with categories + fileter  => method all() ', async () => {
+    const expected = [db.categories[0]];
+    const result = await categoryService.index({ title: 'Lacteos' });
+
     expect(result).toStrictEqual(expected);
   });
 });
